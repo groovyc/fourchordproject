@@ -15,7 +15,7 @@
             <TextBlock Margin="0,0,0,-9.5" Text="{Binding}"/>
         </DataTemplate>
 
-         <!--Grid-appropriate item template as seen in section 2--> 
+        <!--Grid-appropriate item template as seen in section 2-->
         <!--<DataTemplate x:Key="Standard200x180TileItemTemplate">
             <Grid Margin="0,0,9.5,9.5" Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}">
                 <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}" Height="138.5" Width="138.5"/>
@@ -58,9 +58,9 @@
             </Grid>
         </DataTemplate>
     </Page.Resources>
-    
-    
-    
+
+
+
 
     <Grid x:Name="LayoutRoot">
 
@@ -70,147 +70,47 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-      
-        
-        
+       
+
+
         <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="0,18,0,18" />
-<!--<Button />
+        <!--<Button />
 <MenuFlyout />-->
+        <!--<Button x:Name="Transition" Content="Major" Margin="10,44.167,0,208" Click="Transition_Click" Grid.Row="1"/>-->
+
 
         <Hub x:Name="Hub"  Header="keys"  Background="{ThemeResource  FlipViewButtonForegroundThemeBrush}">
             <!--x:Uid="Hub"-->
-            <HubSection x:Uid="HubSection1" Header="Select a key signature:" DataContext="{Binding Groups}" Width="Auto" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}"> 
+
+            <HubSection x:Uid="HubSection1" Header="Select a key signature:" DataContext="{Binding Groups}" Width="Auto" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
                
                 <DataTemplate>
-                    <ListView
-                        ItemsSource="{Binding}"
+                         
+                                    <ListView  ItemsSource="{Binding}"
                         IsItemClickEnabled="True"
                         ItemClick="GroupSection_ItemClick"
                         ContinuumNavigationTransitionInfo.ExitElementContainer="True">
-                        <ListView.ItemTemplate>
+                                        <ListView.ItemTemplate>
 
-                            <DataTemplate>
+                                            <DataTemplate>
 
-                                <StackPanel Margin="0,0,0,27.5">
-                                    <TextBlock Text="{Binding Title}" Style="{ThemeResource ListViewItemTextBlockStyle}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                                                <StackPanel Margin="0,0,0,27.5">
+                                                    <TextBlock Text="{Binding Title}" Style="{ThemeResource ListViewItemTextBlockStyle}" />
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+
+
                 </DataTemplate>
+
+              
+               
+                
             </HubSection>
 
         </Hub>
 
-        
-    </Grid>
+     </Grid>
 </Page>
 
-
-
-<!--<Page
-    x:Class="_4chordproject.HubPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:_4chordproject"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:data="using:_4chordproject.Data"
-    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
-      d:DataContext="{Binding Source={d:DesignData Source=/DataModel/SampleData.json, Type=data:SampleDataSource}}"
-  mc:Ignorable="d">
-    --><!--d:DataContext="{Binding Source={d:DesignData Source=/DataModel/SampleData.json, Type=data:SampleDataSource}}"--><!--
-   
-
-    <Page.Resources>
-        <DataTemplate x:Key="HubSectionHeaderTemplate">
-            <TextBlock Margin="0,0,0,-9.5" Text="{Binding}"/>
-        </DataTemplate>
-
-
-
-
-        <DataTemplate x:Key="StandardTripleLineItemTemplate">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" Margin="0,9.5,0,0" Grid.Column="0" HorizontalAlignment="Left">
-                    <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}" Height="79" Width="79"/>
-                </Border>
-                <StackPanel Grid.Column="1" Margin="14.5,0,0,0">
-                    <TextBlock Text="{Binding Title}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
-                    <TextBlock Text="{Binding Description}" Style="{ThemeResource ListViewItemContentTextBlockStyle}" Foreground="{ThemeResource PhoneMidBrush}" />
-                    <TextBlock Text="{Binding Subtitle}" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}" />
-                </StackPanel>
-            </Grid>
-        </DataTemplate>
-
-        --><!--data template for storing items in a grid--><!--
-        <DataTemplate x:Key="StandardDoubleLineItemTemplate">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" Margin="0,10,0,0" Grid.Column="0" HorizontalAlignment="Left">
-                    <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}" Height="79" Width="79"/>
-                </Border>
-                <StackPanel Grid.Column="1" Margin="14.833,0,0,0">
-                    <TextBlock Text="{Binding Title}" Style="{ThemeResource ListViewItemTextBlockStyle}"/>
-                    <TextBlock Text="{Binding Artist}" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}"/>
-                </StackPanel>
-            </Grid>
-        </DataTemplate>
-    </Page.Resources>
-
-
-
-
-    --><!--section 1--><!--
-    <Grid x:Name="LayoutRoot">
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,18,0,18" HorizontalAlignment="Right">
-            <TextBlock Text="fourchord" Style="{StaticResource TitleTextBlockStyle}" Margin="18,0"/>
-            --><!--<Button-->
-            <!--x:Name="SecondPage" Content="Major" Click="SecondPage_Click" Margin="148,101,0,382"/>
-        <Button
-        	x:Name="SecondPage_Copy" Content="Minor" Click="SecondPage_Click" Margin="257,102,0,384.333" Width="120"/>--><!--
-        </StackPanel>
-        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="0,18,0,18" />
-        <Hub x:Name="Hub" x:Uid="Hub" Header="keys" Background="{ThemeResource FlipViewButtonForegroundThemeBrush }">
-            <HubSection x:Uid="HubSection1" Header="Select a key signature:" DataContext="{Binding Groups}" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
-
-                <DataTemplate>
-
-
-                    <ListView
-                        ItemsSource="{Binding}"
-                        IsItemClickEnabled="True"
-                        ItemClick="GroupSection_ItemClick"
-                        ContinuumNavigationTransitionInfo.ExitElementContainer="True">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Margin="0,0,0,27.5">
-                                    <TextBlock Text="{Binding Key}" Style="{ThemeResource ListViewItemTextBlockStyle}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </DataTemplate>
-
-            </HubSection>
-
-
-        </Hub>
-
-    </Grid>
-</Page>-->

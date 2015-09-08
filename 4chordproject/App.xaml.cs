@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
+
+  //xmlns:local="using:SDKTemplate"
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
 namespace _4chordproject

@@ -28,6 +28,11 @@ namespace _4chordproject
     /// </summary>
     public sealed partial class App : Application
     {
+        // http://go.microsoft.com/fwlink/?LinkId=290986&clcid=0x409
+        public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient fourchordprojectClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
+        "https://fourchordproject.azure-mobile.net/",
+        "vGyinPqfnEifIrKwhvwutuslYWzNir39");
+
         private TransitionCollection transitions;
 
         /// <summary>

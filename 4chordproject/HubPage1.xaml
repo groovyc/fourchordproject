@@ -82,7 +82,9 @@
 
 
             </StackPanel>
-            <ListBox x:Name="songInfo" VerticalAlignment="Top" Margin="5,0,5,-0.333" Height="97" Width="390">
+            <TextBlock Text="View by Song Details" HorizontalAlignment="Center"  Foreground="Azure" FontWeight="Bold" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}" />
+
+            <ListBox x:Name="songInfo" VerticalAlignment="Top" Margin="5,0,5,-0.333" Height="200" Width="390">
 
            
 
@@ -93,13 +95,13 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <StackPanel Height="412" VerticalAlignment="Top"  Width="354" >
-                            <TextBlock Text="Song:  " FontWeight="Bold"/>
-                            <TextBlock Text="{Binding Title}" />
-                            <TextBlock Text="Artist: " TextWrapping="Wrap" FontWeight="Bold"/>
-                            <TextBlock Text="{Binding Artist}"  Width="112"  />
-                            <TextBlock Text=" Chords: " TextWrapping="Wrap" FontWeight="Bold" />
-                            <TextBlock Text="{Binding Chords}" FontStyle="Italic" Width="200" Margin="0,0,0,-0.333" />
+                            <StackPanel Height="412" VerticalAlignment="Top"  Width="354"  >
+                                <TextBlock Text="Song:  " FontWeight="Bold" FontSize="19"/>
+                                <TextBlock Text="{Binding Title}" FontSize="17" />
+                                <TextBlock Text="Artist: " TextWrapping="Wrap" FontWeight="Bold" FontSize="19"/>
+                                <TextBlock Text="{Binding Artist}" FontSize="17" />
+                                <TextBlock Text="Chords: "  TextWrapping="Wrap" FontWeight="Bold" FontSize="19" />
+                                <TextBlock Text="{Binding Chords}" FontSize="18" TextWrapping="Wrap" FontStyle="Italic" Width="200" Margin="0,0,0,-0.333" />
                             <TextBlock Text=" : " Margin="0,0,0,-0.333" />
                             <TextBlock Text="{Binding Description}" />
                         </StackPanel>
@@ -108,14 +110,14 @@
                 </ListBox.ItemTemplate>
                 
             </ListBox>
-            <TextBlock Text="View Album Art" Foreground="Azure" FontWeight="Bold" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}" />
+            <TextBlock Text="View by Album Art" HorizontalAlignment="Center" Foreground="Azure" FontWeight="Bold" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}" />
 
             <ListView x:Name="imageInfo" Margin="5,0,5,-0.333"  Height="354" Width="390" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Height="412" Orientation="Horizontal" Width="354">
+                        <StackPanel Height="267" Orientation="Horizontal" Width="354">
 
-                            <Image   Source="{Binding ImagePath}" Height="248" Margin="65,0,59,0"/>
+                            <Image   Source="{Binding ImagePath}" Stretch="UniformToFill"  Height="248" Margin="65,0,59,0"/>
                         </StackPanel>
                     </DataTemplate>
              </ListView.ItemTemplate>

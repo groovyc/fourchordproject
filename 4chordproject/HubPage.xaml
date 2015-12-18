@@ -110,7 +110,7 @@
             </HubSection>
 
         </Hub>
-        <Button Content="Toggle Minor Keys" HorizontalAlignment="Left" Margin="187,114,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Get Chart Data" HorizontalAlignment="Left" Margin="208,231,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
 </Page>

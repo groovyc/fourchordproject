@@ -82,7 +82,10 @@
 
 
             </StackPanel>
-            <ListBox x:Name="songInfo" VerticalAlignment="Top" Margin="5,0,5,-0.333"  Height="97" Width="390" >
+            <ListBox x:Name="songInfo" VerticalAlignment="Top" Margin="5,0,5,-0.333" Height="97" Width="390">
+
+           
+
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>

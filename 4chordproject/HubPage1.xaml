@@ -106,8 +106,10 @@
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-
+                
             </ListBox>
+            <TextBlock Text="View Album Art" Foreground="Azure" FontWeight="Bold" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}" />
+
             <ListView x:Name="imageInfo" Margin="5,0,5,-0.333"  Height="354" Width="390" >
                 <ListView.ItemTemplate>
                     <DataTemplate>

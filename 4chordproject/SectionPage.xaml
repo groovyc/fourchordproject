@@ -55,7 +55,7 @@
             ItemClick="ItemView_ItemClick"
             SelectionMode="None"
             IsSwipeEnabled="false"
-            Margin="19,0,0,0">
+            Margin="19,0,0,0" SelectionChanged="itemListView_SelectionChanged">
             <!--sources the items which we will call later-->
 
             <ListView.ItemTemplate>

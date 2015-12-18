@@ -7,9 +7,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    DataContext="{Binding DefaultViewModel.Item, RelativeSource={RelativeSource Self}}"
-    d:DataContext="{Binding Groups[0].Items[0], Source={d:DesignData Source=/DataModel/SampleData.json, Type=data:SampleDataSource}}"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    DataContext="{Binding DefaultViewModel.Items[1], RelativeSource={RelativeSource Self}}"
+    d:DataContext="{Binding Groups[0].Items[1], Source={d:DesignData Source=/DataModel/SampleData.json, Type=data:SampleDataSource}}"
+    
+    Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}">
     <Page.Transitions>
         <TransitionCollection>
             <NavigationThemeTransition>
@@ -20,33 +21,51 @@
         </TransitionCollection>
     </Page.Transitions>
 
+
     <Grid x:Name="LayoutRoot">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
             </TransitionCollection>
         </Grid.ChildrenTransitions>
-        <Grid.RowDefinitions>
+        <!--<Grid.RowDefinitions>
             <RowDefinition Height="72.708"/>
             <RowDefinition Height="56.458"/>
             <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        </Grid.RowDefinitions>-->
 
         <!-- Title Panel -->
-        <StackPanel Grid.Row="0" Margin="19,0,0,0.166" Grid.RowSpan="2">
-            <TextBlock x:Uid="Header" Text="4chorditem page" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0" />
-            <TextBlock Text="{Binding Artist}" Style="{ThemeResource HeaderTextBlockStyle}" Margin="0,-6.5,0,26.5" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        <StackPanel Grid.Row="0" Margin="19,0,10,0.166" Grid.RowSpan="2">
+            <!--<TextBlock x:Uid="Header" Text="4chorditem page" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0" />-->
+            <TextBlock  Text="Artist Name:" FontSize="22" Height="23" Margin="0,0,241.833,0" RenderTransformOrigin="0.759,1.866"/>
 
-            <StackPanel Grid.Row="1" Margin="-14,150,19.833,30" Height="225" RenderTransformOrigin="0.5,0.5">
-                <StackPanel.RenderTransform>
+
+            <TextBlock Text="{Binding Artist}"  FontSize="20" Style="{ThemeResource HeaderTextBlockStyle}" Margin="129,-6.5,-0.167,26.5" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" Height="55"/>
+
+            <StackPanel Grid.Row="1"  Margin="0,70,19.833,30" Height="114" RenderTransformOrigin="0.5,0.5">
+                <!--<StackPanel.RenderTransform>
+
                     <CompositeTransform ScaleY="-1"/>
-                </StackPanel.RenderTransform>
-                <TextBlock Text="{Binding Chords}" Style="{ThemeResource HeaderTextBlockStyle}"/>
+                </StackPanel.RenderTransform>-->
+                <!--<TextBlock x:Uid="Body" Text="{Binding}" Style="{ThemeResource BodyTextBlockStyle}" Margin="0, 0,0,0" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" Height="84"/>-->
+                <TextBlock  Text="Song Title:" FontSize="22"  Height="29" Margin="0,0,220.833,0" RenderTransformOrigin="0.759,1.866"/>
+                <TextBlock Text="{Binding Title}" FontSize="20" Style="{ThemeResource HeaderTextBlockStyle}" Margin="0,-6.5,1.833,26.5" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" RenderTransformOrigin="0.483,2.42" Height="28" HorizontalAlignment="Right" Width="238"/>
 
             </StackPanel>
-           <TextBlock Text="{Binding }" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}"/>
+            <StackPanel Grid.Row="3"  Height="225" RenderTransformOrigin="0.5,0.5">
+                <!--<StackPanel.RenderTransform>
 
+                    <CompositeTransform ScaleY="-1"/>
+                </StackPanel.RenderTransform>-->
+                <!--<TextBlock x:Uid="Body" Text="{Binding}" Style="{ThemeResource BodyTextBlockStyle}" Margin="0, 0,0,0" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" Height="84"/>-->
+                <TextBlock  Text="Chords:" FontSize="22" Height="23" Margin="0,0,241.833,0" RenderTransformOrigin="0.759,1.866"/>
+
+                <TextBlock Text="{Binding Chords}" FontSize="24" Style="{ThemeResource HeaderTextBlockStyle}" Margin="125,-6.5,-10.167,26.5" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" RenderTransformOrigin="0.483,2.42"/>
+
+            </StackPanel>
+            <!--<TextBlock Text="{Binding }" Style="{ThemeResource ListViewItemSubheaderTextBlockStyle}"/>-->
         </StackPanel>
+        <!--<HyperlinkButton Content="HyperlinkButton" HorizontalAlignment="Left" Margin="77,61.833,0,0" Grid.Row="2" VerticalAlignment="Top" Click="HyperlinkButton_Click"/>-->
 
         <!-- 
             TODO: Content should be placed within the following grid 

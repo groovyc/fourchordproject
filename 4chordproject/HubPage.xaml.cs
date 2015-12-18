@@ -153,6 +153,13 @@ namespace _4chordproject
 
         #endregion
 
+        
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(HubPage1));
+        }
+
       
         
     }

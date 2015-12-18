@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="_4chordproject.HubPage"
+    x:Class="_4chordproject.HubPage1"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:_4chordproject"
@@ -8,20 +8,19 @@
     xmlns:data="using:_4chordproject.Data"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
     d:DataContext="{Binding Source={d:DesignData Source=/DataModel/SampleData.json, Type=data:SampleDataSource}}"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
+
+
+    <!--d:DataContext="{Binding Groups[0], Source={d:DesignData Source=/DataModel/SampleData.json, Type=data:SampleDataSource}}"-->
+
+
 
     <Page.Resources>
         <DataTemplate x:Key="HubSectionHeaderTemplate">
             <TextBlock Margin="0,0,0,-9.5" Text="{Binding}"/>
         </DataTemplate>
 
-        <!--Grid-appropriate item template as seen in section 2-->
-        <!--<DataTemplate x:Key="Standard200x180TileItemTemplate">
-            <Grid Margin="0,0,9.5,9.5" Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}">
-                <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}" Height="138.5" Width="138.5"/>
-                <TextBlock Text="{Binding Title}" VerticalAlignment="Bottom" Margin="9.5,0,0,6.5" Style="{ThemeResource BaseTextBlockStyle}"/>
-            </Grid>
-        </DataTemplate>-->
 
         <DataTemplate x:Key="StandardTripleLineItemTemplate">
             <Grid>
@@ -70,48 +69,57 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-       
 
 
-        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="0,18,0,18" />
-        <!--<Button />
-<MenuFlyout />-->
-        <!--<Button x:Name="Transition" Content="Major" Margin="10,44.167,0,208" Click="Transition_Click" Grid.Row="1"/>-->
+
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="0,26.333,0,10" >
+            <!--<TextBox x:Name="tbx2" Margin="0" TextWrapping="Wrap" VerticalAlignment="Stretch" TextChanged="TextBox_TextChanged"/>-->
+            <Button x:Name="btn2GetData" Content="Get Song Data" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="btn2GetData_Click"/>
+            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="{Binding Song}" Margin="2" />
+
+            <StackPanel>
 
 
-        <Hub x:Name="Hub"  Header="keys"  Background="{ThemeResource  FlipViewButtonForegroundThemeBrush}">
-            <!--x:Uid="Hub"-->
 
-            <HubSection x:Uid="HubSection1" Header="Select a key signature:" DataContext="{Binding Groups}" Width="Auto" HeaderTemplate="{ThemeResource HubSectionHeaderTemplate}">
-               
-                <DataTemplate>
-                         
-                                    <ListView  ItemsSource="{Binding}"
-                        IsItemClickEnabled="True"
-                        ItemClick="GroupSection_ItemClick"
-                        ContinuumNavigationTransitionInfo.ExitElementContainer="True">
-                                        <ListView.ItemTemplate>
+            </StackPanel>
+            <ListBox x:Name="songInfo" VerticalAlignment="Top" Margin="5,0,5,-0.333"  Height="97" Width="390" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Height="412" VerticalAlignment="Top"  Width="354" >
+                            <TextBlock Text="Song:  " FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Title}" />
+                            <TextBlock Text="Artist: " TextWrapping="Wrap" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Artist}"  Width="112"  />
+                            <TextBlock Text=" Chords: " TextWrapping="Wrap" FontWeight="Bold" />
+                            <TextBlock Text="{Binding Chords}" FontStyle="Italic" Width="200" Margin="0,0,0,-0.333" />
+                            <TextBlock Text=" : " Margin="0,0,0,-0.333" />
+                            <TextBlock Text="{Binding Description}" />
+                        </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
 
-                                            <DataTemplate>
+            </ListBox>
+            <ListView x:Name="imageInfo" Margin="5,0,5,-0.333"  Height="354" Width="390" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Height="412" Orientation="Horizontal" Width="354">
 
-                                                <StackPanel Margin="0,0,0,27.5">
-                                                    <TextBlock Text="{Binding Title}" Style="{ThemeResource ListViewItemTextBlockStyle}" />
-                                                </StackPanel>
-                                            </DataTemplate>
-                                        </ListView.ItemTemplate>
-                                    </ListView>
-
-
-                </DataTemplate>
-
-              
-               
-                
-            </HubSection>
-
-        </Hub>
-        <Button Content="Toggle Minor Keys" HorizontalAlignment="Left" Margin="187,114,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+                            <Image   Source="{Binding ImagePath}" Height="248" Margin="65,0,59,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+             </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
 
     </Grid>
+
 </Page>
+
+
 

@@ -18,6 +18,10 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 
+//using Microsoft.WindowsAzure.Configuration;
+//using Microsoft.WindowsAzure.MediaServices.Client;
+//using Microsoft.WindowsAzure.StorageClient;
+
   //xmlns:local="using:SDKTemplate"
 // The Hub Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -28,6 +32,17 @@ namespace _4chordproject
     /// </summary>
     public sealed partial class App : Application
     {
+        
+
+
+        //public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient fourchordprojectClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
+        //"https://fourchordproject.azure-mobile.net/",
+        //"vGyinPqfnEifIrKwhvwutuslYWzNir39");
+
+
+
+       
+
         private TransitionCollection transitions;
 
         /// <summary>

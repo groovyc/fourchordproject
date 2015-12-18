@@ -123,5 +123,10 @@ namespace _4chordproject
         }
 
         #endregion
+
+        private void itemListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
